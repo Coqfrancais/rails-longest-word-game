@@ -1,0 +1,18 @@
+<h1>NEW GAME</h1>
+
+<div class=letters>
+<%= @letters %>
+</div>
+<br><br>
+
+<div class=form>
+<form action="/score" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag 'letters', @letters %>
+<!--action: sur quelle page j'arrive quand je submit / 
+GET permet de lire une page -->
+  <input type="text" name="word" placeholder="What is your word ?"> <!--Il faut donner un nom à mon input, création d'un hash, name=key-->
+  <input type="submit" value="Submit">
+  
+</form>
+</div>
